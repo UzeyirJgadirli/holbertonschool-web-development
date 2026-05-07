@@ -1,65 +1,4 @@
-@font-face {
-    font-family: SourceSansPro;
-    src: url(../assets/source-sans-pro_bold.otf);
-    font-weight: 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: SourceSansPro;
-    src: url(../assets/source-sans-pro_light.otf);
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: SourceSansPro;
-    src: url(../assets/source-sans-pro_italic.otf);
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: SourceSansPro;
-    src: url(../assets/source-sans-pro_regular.otf);
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: SpinCycleOT;
-    src: url(../assets/spin-cycle-ot.otf);
-    font-display: swap;
-}
-
-/* ----- GENERAL ----- */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    background-color: white;
-    font-family: SourceSansPro;
-    color: white;
-    text-align: center;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-/* ===== GENERAL ===== */
+/* ===== RESET ===== */
 
 * {
     margin: 0;
@@ -70,7 +9,6 @@ body {
 body {
     font-family: SourceSansPro, sans-serif;
     color: white;
-    background: white;
 }
 
 /* ===== HEADER ===== */
@@ -81,56 +19,68 @@ header {
     left: 0;
     width: 100%;
     padding: 0 170px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
-    background: transparent;
+
+    z-index: 100;
 }
 
-header img {
-    height: 32px;
+.logo img {
+    width: 167px;
 }
 
-header div {
+nav {
     display: flex;
-    gap: 50px;
+    gap: 52px;
 }
 
-header a {
-    color: white;
+nav a {
     text-decoration: none;
+    color: white;
+
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.5px;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 
 .hero {
-    min-height: 100vh;
+    position: relative;
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(0, 0, 0, 0.25) 0%,
-            rgba(0, 0, 0, 0.75) 100%
-        ),
-        url("../assets/background.png");
+    min-height: 1093px;
 
-    background-size: cover;
+    background-image: url("../assets/background.png");
     background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 220px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(41, 48, 61, 0.15) 0%,
+            rgba(7, 22, 41, 0.85) 100%
+        );
 }
 
 /* ===== TITLE ===== */
 
 .title {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 220px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,44 +90,51 @@ header a {
     font-size: 120px;
     font-weight: 700;
     line-height: 1;
+
     margin-bottom: 20px;
 }
 
 /* ===== KEYWORDS ===== */
 
-.title p {
+.keywords {
     display: flex;
-    gap: 60px;
+    gap: 58px;
 
+    margin-bottom: 38px;
+}
+
+.keywords span {
     font-size: 16px;
     font-weight: 700;
-    letter-spacing: 1px;
-
-    margin-bottom: 40px;
 }
 
 /* ===== BUTTON ===== */
 
 button {
     background: #C271FF;
+
     border: none;
-    border-radius: 999px;
+    border-radius: 22px;
+
+    width: 162px;
+    height: 44px;
 
     color: white;
     font-size: 14px;
     font-weight: 600;
 
-    padding: 16px 32px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 
     cursor: pointer;
-
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== PROS SECTION ===== */
+/* ===== PROS ===== */
 
 .pros {
-    margin-top: 180px;
+    position: relative;
+    z-index: 2;
+
+    margin-top: 168px;
 
     display: flex;
     flex-direction: column;
@@ -187,10 +144,11 @@ button {
 .pros h2 {
     font-size: 32px;
     font-weight: 300;
-    margin-bottom: 80px;
+
+    margin-bottom: 88px;
 }
 
-.purple-word {
+.pros h2 span {
     color: #C271FF;
     font-weight: 700;
 }
@@ -199,42 +157,38 @@ button {
 
 .people {
     display: flex;
-    justify-content: center;
-    gap: 90px;
-    flex-wrap: wrap;
+    gap: 100px;
 }
 
-.people div {
+.person {
     width: 150px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    text-align: center;
 }
 
-.round-image {
+.person img {
     width: 150px;
     height: 150px;
+
     border-radius: 50%;
-    margin-bottom: 15px;
+
+    margin-bottom: 10px;
 }
 
-.people h3 {
+.person h3 {
     font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 5px;
+    font-weight: 900;
+
+    margin-bottom: 2px;
 }
 
-.people blockquote {
+.person p {
     font-size: 16px;
     font-style: italic;
     font-weight: 300;
-    line-height: 1.4;
-}
-
-.people .description {
-    font-style: italic;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.4;
+    line-height: 24px;
 }
