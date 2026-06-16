@@ -201,7 +201,7 @@
   }
   
   ul.row, .row {
-    flex-direction: column;
+    flex-direction: row;
     margin: 0;
   }
 
@@ -420,18 +420,18 @@
     justify-content: center;
     min-height: 35vh;
   }
+
   /* Section Latest news
       ============================= */
   
-  
   .section-latest-news .row {
-    flex-direction: row-reverse;
-    flex-direction: column;
+    flex-direction: row;
   }
   
   @media(max-width: 767px) {
 
   }
+
   /* Section SERVICES
       ============================= */
   
